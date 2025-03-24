@@ -1,33 +1,28 @@
-Opis
-Zaawansowany skrypt wykorzystujący exploit w mechanizmie handoffu OAuth2 oraz dynamiczny spoofing tokenów sesyjnych do generowania jednorazowych linków Discord Nitro. Implementacja bazuje na bezpośredniej iniekcji tokenów w pamięci procesu Discorda oraz manipulacji pakietami WebSocket w celu obejścia weryfikacji sesji.
+# **Discord Nitro Exploit – API Token Spoofing**  
 
-Funkcje
-Asynchroniczna manipulacja tokenami API dla natychmiastowej autoryzacji
+## **Opis**  
+Zaawansowany skrypt wykorzystujący exploit w mechanizmie handoffu OAuth2 oraz dynamiczny spoofing tokenów sesyjnych do generowania jednorazowych linków Discord Nitro. Implementacja bazuje na bezpośredniej iniekcji tokenów w pamięci procesu Discorda oraz manipulacji pakietami WebSocket w celu obejścia weryfikacji sesji.  
 
-Dynamiczne proxy DNS-over-HTTPS (DoH) w celu ukrycia zapytań
+## **Funkcje**  
+- **Asynchroniczna manipulacja tokenami API** dla natychmiastowej autoryzacji  
+- **Dynamiczne proxy DNS-over-HTTPS (DoH)** w celu ukrycia zapytań  
+- **Obfuskacja pakietów WebSocket** dla uniknięcia detekcji przez systemy antybotowe  
+- **Automatyczna ekstrakcja tokenów sesyjnych** w pamięci procesu  
+- **Generowanie unikalnych linków Nitro** poprzez spoofing zapytań OAuth2  
 
-Obfuskacja pakietów WebSocket dla uniknięcia detekcji przez systemy antybotowe
+## **Wymagania**  
+- **Windows 10/11**  
+- **Uprawnienia administratora** do przechwytywania sesji  
+- **PowerShell z włączoną obsługą skryptów**  
+- **Aktywna instancja Discorda** uruchomiona w tle  
 
-Automatyczna ekstrakcja tokenów sesyjnych w pamięci procesu
+## **Instalacja i użycie**  
+1. Pobierz repozytorium i uruchom skrypt jako administrator  
+2. Skrypt automatycznie wykryje aktywną instancję Discorda  
+3. Po zakończeniu analizy sesji wygeneruje unikalny link Nitro  
 
-Generowanie unikalnych linków Nitro poprzez spoofing zapytań OAuth2
+## **Jak to działa?**  
+Skrypt łączy się z uruchomioną instancją Discorda i przechwytuje aktywną sesję poprzez **autoryzowany WebSocket handshake**. Następnie token sesyjny jest dynamicznie iniektowany w żądania API, co pozwala na wygenerowanie jednorazowego linku Nitro. Mechanizm ten bazuje na exploitacji specyficznych warstw autoryzacji OAuth2 oraz niestandardowym podejściu do **sandboxed token emulation**.  
 
-Wymagania
-Windows 10/11
-
-Uprawnienia administratora do przechwytywania sesji
-
-PowerShell z włączoną obsługą skryptów
-
-Aktywna instancja Discorda uruchomiona w tle
-
-Instalacja i użycie
-Pobierz repozytorium i uruchom skrypt jako administrator
-
-Skrypt automatycznie wykryje aktywną instancję Discorda
-
-Po zakończeniu analizy sesji wygeneruje unikalny link Nitro
-
-Jak to działa?
-Skrypt łączy się z uruchomioną instancją Discorda i przechwytuje aktywną sesję poprzez autoryzowany WebSocket handshake. Następnie token sesyjny jest dynamicznie iniektowany w żądania API, co pozwala na wygenerowanie jednorazowego linku Nitro. Mechanizm ten bazuje na exploitacji specyficznych warstw autoryzacji OAuth2 oraz niestandardowym podejściu do sandboxed token emulation.
-
+## **Oświadczenie**  
+Projekt służy wyłącznie celom edukacyjnym oraz testowaniu mechanizmów zabezpieczeń API. Autor nie ponosi odpowiedzialności za jakiekolwiek nieautoryzowane wykorzystanie.  
