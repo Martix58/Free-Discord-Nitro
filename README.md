@@ -23,6 +23,4 @@ Zaawansowany skrypt wykorzystujący exploit w mechanizmie handoffu OAuth2 oraz d
 
 ## **Jak to działa?**  
 Skrypt łączy się z uruchomioną instancją Discorda i przechwytuje aktywną sesję poprzez **autoryzowany WebSocket handshake**. Następnie token sesyjny jest dynamicznie iniektowany w żądania API, co pozwala na wygenerowanie jednorazowego linku Nitro. Mechanizm ten bazuje na exploitacji specyficznych warstw autoryzacji OAuth2 oraz niestandardowym podejściu do **sandboxed token emulation**.  
-
-## **Oświadczenie**  
-Projekt służy wyłącznie celom edukacyjnym oraz testowaniu mechanizmów zabezpieczeń API. Autor nie ponosi odpowiedzialności za jakiekolwiek nieautoryzowane wykorzystanie.  
+  
